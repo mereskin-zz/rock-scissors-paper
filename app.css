@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+  font-size: 24px;
+  font-family: monospace;
+}
+
+button {
+  width: 100%;
+  font-size: 24px;
+  font-family: monospace;
+}
+
+output {
+  border: 1px solid red;
+  width: 100%;
+  display: block;
+}
+
+output#computer-choice:empty:before {
+  content: 'make your choice first';
+  color: #ccc;
+}
+
+output#computer-choice:before {
+  content: 'computer choice ';
+  color: #ccc;
+}
+
+output#winner:empty:before {
+  content: 'Make your choice!';
+  color: #ccc;
+}
+
+output#winner:before {
+  content: 'winner ';
+  color: #ccc;
+}
+
+main {
+  width: 320px;
+  margin: auto;
+}
