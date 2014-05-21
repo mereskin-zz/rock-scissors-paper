@@ -2,21 +2,66 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <title>Rock, scissors, paper game</title>
+<style>
+body {
+  text-align: center;
+  font-size: 24px;
+  font-family: monospace;
+}
+
+button {
+  width: 100%;
+  font-size: 24px;
+  font-family: monospace;
+}
+
+output {
+  border: 1px solid red;
+  width: 100%;
+  display: block;
+}
+
+output#computer-choice:empty:before {
+  content: 'make your choice first';
+  color: #ccc;
+}
+
+output#computer-choice:before {
+  content: 'computer choice ';
+  color: #ccc;
+}
+
+output#winner:empty:before {
+  content: 'Make your choice!';
+  color: #ccc;
+}
+
+output#winner:before {
+  content: 'winner ';
+  color: #ccc;
+}
+
+main {
+  width: 320px;
+  margin: auto;
+}
+</style>
 </head>
 
 <body>
-<section id="user-choice">
-  <button data-choice="0">Rock</button>
-  <button data-choice="1">Scissors</button>
-  <button data-choice="2">Paper</button>
-</section>
+<main>
+  <section id="user-choice">
+    <button data-choice="0">Rock</button>
+    <button data-choice="1"><img width="50" height="50" src="http://www.wpclipart.com/tools/scissors/scissors_2.png" /></button>
+    <button data-choice="2" class="foo">Paper</button>
+  </section>
 
-<output id="computer-choice"></output>
+  <output id="computer-choice"></output>
 
-<output id="winner"></output>
-
-<button id="play-again">Play again</button>
+  <output id="winner"></output>
+</main>
 
 <script>
 var CHOICES = ['rock', 'scissors', 'paper'];
