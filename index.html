@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Rock, scissors, paper game</title>
+</head>
+
+<body>
+<section id="user-choice">
+  <button data-choice="0">Rock</button>
+  <button data-choice="1">Scissors</button>
+  <button data-choice="2">Paper</button>
+</section>
+
+<output id="computer-choice"></output>
+
+<output id="winner"></output>
+
+<button id="play-again">Play again</button>
+
+<script>
+var CHOICES = ['rock', 'scissors', 'paper'];
+var WINNERS = ['draw', 'you', 'computer'];
+
+document.querySelector('#user-choice').addEventListener('click', function(e){
+  var userChoice = parseInt(e.target.dataset.choice, 10);
+  var computerChoice = getComputerChoice();
+  var winner = getWinner(userChoice, computerChoice);
+
+  document.querySelector('#computer-choice').textContent = CHOICES[computerChoice];
+  document.querySelector('#winner').textContent = WINNERS[winner];
+});
+
+function getComputerChoice(){
+  return parseInt(Math.random() * 3, 10);
+};
+
+function getWinner(x, y) {
+  if(x==y) return 0;
+  if(x-y == -1 || x-y == 2) return 1;
+  return 2;
+};
+
+</script>
+</body>
+</html>
