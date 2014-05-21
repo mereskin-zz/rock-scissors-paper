@@ -1,12 +1,16 @@
 var assert = require('assert');
+var logic = require('./logic');
+var fixtures = require('./fixtures.json')
 
-function sum(a,b) {
-  return a + b;
-}
+console.log(fixtures.length);
 
+// rock - 0
+// scissors - 1
+// paper - 2
+
+// draw - 0
+// user - 1
+// computer - 2
 describe('Rock Scissors Paper', function(){
-  it('sum must correctly sum', function(){
-    var x = sum(1, 2);
-    assert.equal(x, 3);
-  });
+
 });
