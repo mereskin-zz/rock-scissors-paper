@@ -68,7 +68,7 @@ var CHOICES = ['rock', 'scissors', 'paper'];
 var WINNERS = ['draw', 'you', 'computer'];
 
 document.querySelector('#user-choice').addEventListener('click', function(e){
-  var userChoice = parseInt(e.target.dataset.choice, 10);
+  var userChoice = parseInt(e.target.getAttribute('data-choice'), 10);
   var computerChoice = getComputerChoice();
   var winner = getWinner(userChoice, computerChoice);
 
