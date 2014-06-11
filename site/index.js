@@ -1,10 +1,15 @@
-var game = require('./game');
-
 document.querySelector('#user-choice').addEventListener('click', function(e){
   var userChoice = parseInt(e.target.getAttribute('data-choice'), 10);
-  var computerChoice = game.getComputerChoice();
-  var winner = game.getWinner(userChoice, computerChoice);
+  var request = new XMLHttpRequest();
 
-  document.querySelector('#computer-choice').textContent = game.CHOICES[computerChoice];
-  document.querySelector('#winner').textContent = game.WINNERS[winner];
+  request.onload = function(){
+    var result = JSON.parse(this.responseText);
+
+    document.querySelector('#computer-choice').textContent = result.computerChoiceName;
+    document.querySelector('#winner').textContent = result.winnerName;
+  };
+
+  request.open('get', '/play', true);
+  request.setRequestHeader('Content-Type', 'application/json');
+  request.send(JSON.stringify({ choice: userChoice }));
 });
