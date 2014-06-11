@@ -1,4 +1,4 @@
-var server = require('../src/server');
+var server = require('../server');
 var assert = require('assert');
 var request = require('request');
 
