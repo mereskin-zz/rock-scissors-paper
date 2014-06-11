@@ -1,0 +1,27 @@
+{
+  "name": "rock-scissors-paper",
+  "version": "0.1.0",
+  "description": "Rock-scissors-paper game for web development course",
+  "main": "index.html",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "browserify src/index.js -o index.js && nws"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mereskin/rock-scissors-paper"
+  },
+  "author": "AM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mereskin/rock-scissors-paper/issues"
+  },
+  "homepage": "https://github.com/mereskin/rock-scissors-paper",
+  "devDependencies": {
+    "browserify": "^4.1.9",
+    "nws": "^0.5.0"
+  }
+}
