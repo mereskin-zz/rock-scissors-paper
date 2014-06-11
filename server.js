@@ -5,6 +5,7 @@ var game = require('./src/game');
 var app = express();
 
 app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.all('/play', function(req, res){
   var userChoice = req.param('choice');
